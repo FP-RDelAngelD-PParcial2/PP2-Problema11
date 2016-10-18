@@ -35,15 +35,16 @@ public class PP2Problema11 {
         return a; //Regresa el valor de a
     }
     public static void convertirNumero(int[] numeros, String[]romanos){
-        int a = verificarNumero(" numero a convertir "); 
-        String r="";
-        for(int i=numeros.length-1;i>=0;i--){//Recorrer al reves
-            int veces=a/numeros[i];
-            while(veces>0){ //Significa que s epudo dividir entre ese numero
-                r=r+romanos[i];
-                veces--;
+        int a = verificarNumero(" numero a convertir "); //Se solicita el numero //3453
+        String r=""; //Se declara una cadena
+        for(int i=numeros.length-1;i>=0;i--){//Recorrer al reves el arreglo para que empieze por el numero mas grande //i=12
+            int veces=a/numeros[i];//a una nueva variable llamada veces el numero solicitado se divide entre la posicion
+                                   //veces=3453/1000 veces=3
+            while(veces>0){ //Significa que s epudo dividir entre ese numero //3>0 VERDADERO //2>0 VERDADERO //
+                r=r+romanos[i]; //El numero que se encuentra en la posicion 12 //r=""+"M" //r="M"+"M" r="MM" //
+                veces--; //A veces se le quita 1 //veces=2 //veces=1
             }
-            a=a%numeros[i];
+            a=a%numeros[i]; //a=3453%1000 a=453 (y continua al principio del for)
         }
        System.out.print(r); //Se imprime la cadena
     }
