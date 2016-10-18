@@ -15,8 +15,8 @@ public class PP2Problema11 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] numeros= {1,4,5,6,9,10,11,40,50,60,90,100,110};
-        String[] romanos= {"I","IV","V","VI","IX","X","XI","XL","L","LX","XC","C","CX","CD","D","M"};
+        int[] numeros= {1,4,5,9,10,40,50,90,100,400,500,900,1000};
+        String[] romanos= {"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"};
         convertirNumero(numeros,romanos);
     }
     public static int solicitarDatos(String d){ //Solicita datos
@@ -33,10 +33,17 @@ public class PP2Problema11 {
         }while(a<=0);//Mientras que a sea menor o igual que 0
         return a; //Regresa el valor de a
     }
-    public static String convertirNumero(int[] numeros, String[]romanos){
-        int a = verificarNumero(" numero a convertir "); //Se ingresa el numero de 4 digitos //4589
-        String r=""; //Se declara un string para guardar el numero
-        r=r+a;//El numero se transorma a String //""+4589 
-        return r;//Regresa 4589 en forma de dato String
+    public static void convertirNumero(int[] numeros, String[]romanos){
+        int a = verificarNumero(" numero a convertir "); 
+        String r="";
+        for(int i=numeros.length-1;i>=0;i--){//Recorrer al reves
+            int veces=a/numeros[i];
+            while(veces>0){ //Significa que s epudo dividir entre ese numero
+                r=r+romanos[i];
+                veces--;
+            }
+            a=a%numeros[i];
+        }
+       System.out.print(r);
     }
 }
