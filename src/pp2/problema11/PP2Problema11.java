@@ -15,8 +15,9 @@ public class PP2Problema11 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] numeros= {1,4,5,9,10,40,50,90,100,400,500,900,1000};
-        String[] romanos= {"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"};
+        int[] numeros= {1,4,5,9,10,40,50,90,100,400,500,900,1000}; //Arreglo de numeros en los que hay los caracteres romanos en numeros
+                                                                   //Ya que se necesitan para poder "igualarlos" en la posicion
+        String[] romanos= {"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"};//Arreglo de numeros romanos que tienen un valor 
         convertirNumero(numeros,romanos);
     }
     public static int solicitarDatos(String d){ //Solicita datos
@@ -44,6 +45,6 @@ public class PP2Problema11 {
             }
             a=a%numeros[i];
         }
-       System.out.print(r);
+       System.out.print(r); //Se imprime la cadena
     }
 }
