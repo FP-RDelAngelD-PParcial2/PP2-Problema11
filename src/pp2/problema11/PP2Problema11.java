@@ -15,10 +15,9 @@ public class PP2Problema11 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int num= solicitarDatos("cantidad de numeros en el numero ");
-        int[] numero = new int[num];
-        llenarVector(numero);
-       
+        int[] numeros= {1,4,5,6,9,10,11,40,50,60,90,100,110,};,
+        String[] romanos= {"I","IV","V","VI","IX","X","XI","XL","L","LX","XC","C","CX","CD","D","M"};
+        convertirNumero();
     }
     public static int solicitarDatos(String d){ //Solicita datos
         int miDato;
@@ -27,18 +26,17 @@ public class PP2Problema11 {
         miDato= entradaEscaner.nextInt();
         return miDato;
     }
-     public static int [] llenarVector(int []n){//Metodo de llenar el vector, recibe un arreglo de enteros, regresa un arreglo de enteros
-        Scanner entradaEscaner = new Scanner(System.in);  
-        System.out.println("Introduce el numero 1 por 1");
-        for (int i = 0; i<n.length; i++){//Mientras que el valor de i sea menor que el tamaño del arreglo(10), i se aumentara en 1
-            System.out.print("Introduce un número "); //i indica la posición
-            n[i]=entradaEscaner.nextInt();//En la pocision i se asigna el valor
-                                          //Y regresa hasta que la posicion i se vuelva 10
-                                          //En ese momento regresa el arreglo
-        }
-        return n;
-       }
-    public static void c(){
-        
+    public static int verificarNumero(String d){
+        int a; //Variable
+        do{ //Hacer que solicite datos y se guarden en a 
+        a = solicitarDatos(d);
+        }while(a<=0);//Mientras que a sea menor o igual que 0
+        return a; //Regresa el valor de a
+    }
+    public static String convertirNumero(){
+        int a = verificarNumero(" numero a convertir "); //Se ingresa el numero de 4 digitos //4589
+        String r=""; //Se declara un string para guardar el numero
+        r=r+a;//El numero se transorma a String //""+4589 
+        return r;//Regresa 4589 en forma de dato String
     }
 }
