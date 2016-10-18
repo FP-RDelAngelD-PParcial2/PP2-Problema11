@@ -17,6 +17,7 @@ public class PP2Problema11 {
     public static void main(String[] args) {
         int num= solicitarDatos("cantidad de numeros en el numero ");
         int[] numero = new int[num];
+        llenarVector(numero);
        
     }
     public static int solicitarDatos(String d){ //Solicita datos
@@ -27,9 +28,10 @@ public class PP2Problema11 {
         return miDato;
     }
      public static int [] llenarVector(int []n){//Metodo de llenar el vector, recibe un arreglo de enteros, regresa un arreglo de enteros
-        Scanner entradaEscaner = new Scanner(System.in);       
+        Scanner entradaEscaner = new Scanner(System.in);  
+        System.out.println("Introduce el numero 1 por 1");
         for (int i = 0; i<n.length; i++){//Mientras que el valor de i sea menor que el tamaño del arreglo(10), i se aumentara en 1
-            System.out.print("Introduce un número para la posición [" + i + "]"); //i indica la posición
+            System.out.print("Introduce un número "); //i indica la posición
             n[i]=entradaEscaner.nextInt();//En la pocision i se asigna el valor
                                           //Y regresa hasta que la posicion i se vuelva 10
                                           //En ese momento regresa el arreglo
