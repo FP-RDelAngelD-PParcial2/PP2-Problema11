@@ -15,9 +15,9 @@ public class PP2Problema11 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] numeros= {1,4,5,6,9,10,11,40,50,60,90,100,110,};,
+        int[] numeros= {1,4,5,6,9,10,11,40,50,60,90,100,110};
         String[] romanos= {"I","IV","V","VI","IX","X","XI","XL","L","LX","XC","C","CX","CD","D","M"};
-        convertirNumero();
+        convertirNumero(numeros,romanos);
     }
     public static int solicitarDatos(String d){ //Solicita datos
         int miDato;
@@ -33,7 +33,7 @@ public class PP2Problema11 {
         }while(a<=0);//Mientras que a sea menor o igual que 0
         return a; //Regresa el valor de a
     }
-    public static String convertirNumero(){
+    public static String convertirNumero(int[] numeros, String[]romanos){
         int a = verificarNumero(" numero a convertir "); //Se ingresa el numero de 4 digitos //4589
         String r=""; //Se declara un string para guardar el numero
         r=r+a;//El numero se transorma a String //""+4589 
